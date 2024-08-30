@@ -13,24 +13,11 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # setup fzf keybindings and fuzzy completion
 eval "$(fzf --zsh)"
 
-# To use eza and bat to preview directories and files with fzf
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
-export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+# To use eza to preview directories fzf
+export FZF_ALT_D_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
-# Advanced customization of fzf options via _fzf_comprun function
-# - The first argument to the function is the name of the command.
-# - You should make sure to pass the rest of the arguments to fzf.
-_fzf_comprun() {
-  local command=$1
-  shift
-
-  case "$command" in
-    cd)           fzf --preview 'eza --tree --color=always {} | head -200' "$@" ;;
-    export|unset) fzf --preview "eval 'echo $'{}"         "$@" ;;
-    ssh)          fzf --preview 'dig {}'                   "$@" ;;
-    *)            fzf --preview "bat -n --color=always --line-range :500 {}" "$@" ;;
-  esac
-}
+# Open fzf with 'bat' preview
+alias fzf="fzf --preview='bat --style=plain  --color=always {}'"
 
 # writing vim will also open nvim
 alias vim="nvim"
@@ -50,6 +37,9 @@ alias rm="trash-put"
 
 # cls to clear the screen
 alias cls="clear"
+
+# thefuck alias
+eval $(thefuck --alias fk)
 
 
 # If you come from bash you might have to change your $PATH.
@@ -173,3 +163,7 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+alias ls='eza -G --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
+
+# Adding the path to bin directory in PATH environment variable, so that i can start PyCharm from any directory
+export PATH=$PATH:~/Downloads/pycharm-community-2024.2/bin
