@@ -24,6 +24,7 @@ alias vim="nvim"
 
 # To use eza with "ls"
 alias ls="eza -G --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias sl="eza -G --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
 # to use z instead of "cd"
 eval "$(zoxide init zsh)"
@@ -37,6 +38,8 @@ alias rm="trash-put"
 
 # cls to clear the screen
 alias cls="clear"
+# csl type to clear the screen
+alias csl="clear"
 
 # thefuck alias
 eval $(thefuck --alias fk)
