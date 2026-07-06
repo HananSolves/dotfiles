@@ -1,5 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
+local mux = wezterm.mux
 
 -- This will hold the configuration
 local config = wezterm.config_builder()
@@ -11,9 +12,11 @@ config.font_size = 16
 -- Disabling tabs in wezterm
 config.enable_tab_bar = false
 
--- Start wezterm terminal on full screen
-config.initial_cols = 200
-config.initial_rows = 50
+-- Maximize on startup instead of fixed initial size
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
+end)
 
 -- Hiding the top bar
 config.window_decorations = "RESIZE"

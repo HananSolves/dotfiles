@@ -42,7 +42,7 @@ alias cls="clear"
 alias csl="clear"
 
 # thefuck alias
-eval $(thefuck --alias fk)
+# eval $(thefuck --alias fk)
 
 
 # If you come from bash you might have to change your $PATH.
@@ -168,5 +168,3 @@ source $ZSH/oh-my-zsh.sh
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 alias ls='eza -G --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions'
 
-# Adding the path to bin directory in PATH environment variable, so that i can start PyCharm from any directory
-export PATH=$PATH:~/Downloads/pycharm-community-2024.2/bin
