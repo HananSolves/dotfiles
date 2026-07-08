@@ -23,12 +23,12 @@ sudo dnf install stow
 First, check out the dotfiles repo in your $HOME directory using git
 
 ```
-$ git clone https://github.com/HananSolves/dotfiles.git
-$ cd dotfiles
+git clone https://github.com/HananSolves/dotfiles.git
+cd dotfiles
 ```
 
 then use GNU stow to create symlinks
 
 ```
-$ stow .
+stow .
 ```
