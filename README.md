@@ -9,13 +9,13 @@ Ensure you have the following installed on your system
 ### Git
 
 ```
-pacman -S git
+sudo dnf install git
 ```
 
 ### Stow
 
 ```
-pacman -S stow
+sudo dnf install stow
 ```
 
 ## Installation
@@ -23,7 +23,7 @@ pacman -S stow
 First, check out the dotfiles repo in your $HOME directory using git
 
 ```
-$ git clone git@github.com/dreamsofautonomy/dotfiles.git
+$ git clone git@github.com/HananSolves/dotfiles.git
 $ cd dotfiles
 ```
 
