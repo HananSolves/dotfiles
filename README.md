@@ -23,7 +23,7 @@ sudo dnf install stow
 First, check out the dotfiles repo in your $HOME directory using git
 
 ```
-$ git clone git@github.com/HananSolves/dotfiles.git
+$ git clone https://github.com/HananSolves/dotfiles.git
 $ cd dotfiles
 ```
 
